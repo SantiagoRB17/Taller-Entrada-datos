@@ -41,7 +41,8 @@ defmodule CalculoSalarioNeto do
       "El salario neto de Juan es: 1725.0"
   """
   defp generar_mensaje({nombre, salario_neto}) do
-    "El salario neto de #{nombre} es: #{salario_neto}"
+    salario_str = :erlang.float_to_binary(salario_neto, decimals: 2)
+    "El salario neto de #{nombre} es: #{salario_str}"
   end
 
   @doc """
